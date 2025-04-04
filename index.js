@@ -7,10 +7,11 @@ const cors = require("cors")
 dotenv.config();
 //connect db
 connectDB();
+const  allowedOrigins = ['http://localhost:5173','https://cache-api-q6bi.onrender.com']
 
 app.use(express.json());
 const corsOptions = {
-    origin: "http://localhost:5173", // Replace with your allowed origin
+    origin: allowedOrigins, // Replace with your allowed origin
     methods: "GET,POST,PUT,DELETE", // Specify allowed HTTP methods
     allowedHeaders: "Content-Type,Authorization", // Specify allowed headers
     credentials: true, // Allow cookies if needed
